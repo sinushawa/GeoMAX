@@ -55,7 +55,7 @@ namespace GeoMAX
             int IMGwidth = tiff.GetField(TiffTag.IMAGEWIDTH)[0].ToInt();
             int IMGheight = tiff.GetField(TiffTag.IMAGELENGTH)[0].ToInt();
             int _X = (int)Math.Abs(IMGwidth * _U);
-            int _Y = (int)Math.Abs(IMGheight * _V);
+            int _Y = (int)Math.Abs(IMGheight * (1- _V));
             float precisePoint = GetHeight(tiff, _X, _Y);
 
             return precisePoint;
